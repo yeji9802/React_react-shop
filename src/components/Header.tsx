@@ -1,8 +1,8 @@
 import React from "react";
+import styles from "./Header.module.css";
 import { Link } from "react-router-dom";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 
-import styles from "./Header.module.css";
 import Search from "./Search";
 
 const Header = () => {
@@ -13,7 +13,7 @@ const Header = () => {
   ];
 
   return (
-    <section className={styles.header}>
+    <header className={styles.header}>
       <div className={styles.nav}>
         <div className={styles.left}>
           <h1 className={styles.title}>
@@ -43,7 +43,7 @@ const Header = () => {
           </Link>
         </div>
       </div>
-    </section>
+    </header>
   );
 };
 

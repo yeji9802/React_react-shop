@@ -1,0 +1,68 @@
+.container {
+  margin: 0 auto;
+  padding: 20px 16px 32px;
+  width: 1360px;
+  height: 460px;
+}
+
+.menuArea {
+  padding: 8px 0;
+}
+
+.menu {
+  display: flex;
+  color: #a6adba;
+  font-size: 14px;
+}
+
+.menu_category::before {
+  content: ">";
+  margin: 0 12px 0 8px;
+}
+
+.cartX {
+  margin-top: 56px;
+}
+
+.cartIn {
+  height: 120px;
+  display: grid;
+  align-content: space-between;
+}
+
+.title {
+  color: #a6adba;
+  font-size: 24px;
+  font-weight: inherit;
+}
+
+.button {
+  padding: 0 16px;
+  height: 48px;
+  font-size: 14px;
+  font-weight: 600;
+  border: 0;
+  border-radius: 10px;
+  color: #ffffff;
+  background-color: #641ae6;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.button:hover {
+  background-color: #4a08bd;
+}
+
+.priceArea {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 168px;
+  margin-bottom: 80px;
+}
+
+.price {
+  margin-right: 20px;
+  font-size: 24px;
+  color: #a6adba;
+}

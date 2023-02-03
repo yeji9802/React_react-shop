@@ -1,0 +1,39 @@
+.container {
+  margin: 0 auto;
+  padding: 20px 8px 32px;
+  width: 1360px;
+}
+
+.menuArea {
+  padding: 8px 0;
+}
+
+.menu {
+  display: flex;
+  color: #a6adba;
+  font-size: 14px;
+}
+
+.menu_category::before {
+  content: ">";
+  margin: 0 12px 0 8px;
+}
+
+.productArea {
+  padding: 16px 16px 32px;
+  margin-bottom: 80px;
+}
+
+.product_title {
+  margin: 0 0 32px;
+  font-size: 36px;
+  text-align: center;
+  color: #a6adba;
+}
+
+.product_list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 29px;
+}
