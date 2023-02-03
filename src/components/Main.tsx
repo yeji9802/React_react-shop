@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import styles from "./Main.module.css";
 
 import { getProductByCategory } from "../service/shopService";
-import { Product } from "./../model/Product";
 import ShopList from "./ShopList";
 
 const Main = () => {

@@ -5,7 +5,7 @@ import styles from "./Cart.module.css";
 
 const Cart = () => {
   const [cart, setCart] = useState(false);
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -17,6 +17,14 @@ const Cart = () => {
 
   console.log(cart);
 
+  const handleClick = () => {
+    setCount(count - 1);
+
+    if (count === 1) {
+      setCart(false);
+    }
+  };
+
   return (
     <section className={styles.container}>
       <div className={styles.menuArea}>
@@ -25,39 +33,59 @@ const Cart = () => {
           <li className={styles.menu_category}>장바구니</li>
         </ul>
       </div>
-      <div className={styles.cartX}>
+      <div className={styles.cart}>
         {cart ? (
-          <div>
-            <figure className={styles.ImgaeArea}>
-              <img src="" alt="" />
-            </figure>
-            <div>
-              <h2>Mens Casual Premium Slim Fit T-Shirts</h2>
-              <p>$67</p>
-              <div>
-                <button>-</button>
-                <span>{count}</span>
-                <button>+</button>
+          <>
+            <div className={styles.cartO}>
+              <figure className={styles.imgaeArea}>
+                <img src="" alt="" className={styles.imgae} />
+              </figure>
+              <div className={styles.descriptionArea}>
+                <h2 className={styles.title}>
+                  Mens Casual Premium Slim Fit T-Shirts
+                </h2>
+                <p className={styles.price}>$67</p>
+                <div>
+                  <button
+                    onClick={handleClick}
+                    className={`${styles.button} ${styles.leftBtn}`}
+                  >
+                    -
+                  </button>
+                  <button className={`${styles.button} ${styles.countBtn}`}>
+                    {count}
+                  </button>
+                  <button
+                    onClick={() => setCount(count + 1)}
+                    className={`${styles.button} ${styles.rightBtn}`}
+                  >
+                    +
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
+          </>
         ) : (
           <>
-            <div className={styles.cartIn}>
+            <div className={styles.cartX}>
               <h2 className={styles.title}>장바구니에 물품이 없습니다.</h2>
-              <Link to="/">
-                <button className={styles.button}>담으러 가기</button>
+              <Link to="/" className={styles.link}>
+                <button className={`${styles.button} ${styles.radiusBtn}`}>
+                  담으러 가기
+                </button>
               </Link>
             </div>
             <div className={styles.priceArea}>
               <div></div>
-              <div>
-                <span className={styles.price}>총 : $0</span>
-                <button className={styles.button}>구매하기</button>
-              </div>
             </div>
           </>
         )}
+        <div className={styles.purchaseArea}>
+          <span className={styles.price}>총 : $0</span>
+          <button className={`${styles.button} ${styles.radiusBtn}`}>
+            구매하기
+          </button>
+        </div>
       </div>
     </section>
   );

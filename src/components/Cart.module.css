@@ -1,8 +1,24 @@
+/* 버튼 */
+.button {
+  padding: 0 16px;
+  height: 48px;
+  font-size: 14px;
+  font-weight: 600;
+  border: 0;
+  color: #ffffff;
+  background-color: #641ae6;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.button:hover {
+  background-color: #4a08bd;
+}
+
 .container {
   margin: 0 auto;
   padding: 20px 16px 32px;
   width: 1360px;
-  height: 460px;
 }
 
 .menuArea {
@@ -20,11 +36,61 @@
   margin: 0 12px 0 8px;
 }
 
-.cartX {
-  margin-top: 56px;
+.cart {
+  margin: 56px 0 80px;
 }
 
-.cartIn {
+/* 있을 경우 */
+.cartO {
+  display: flex;
+  margin-top: 16px;
+}
+
+.imgaeArea {
+  width: 191px;
+  height: 191px;
+  padding: 16px;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+.descriptionArea {
+  display: grid;
+  align-items: center;
+  padding: 32px 48px;
+  color: #a6adba;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.price {
+  margin: 8px 0 16px;
+  font-size: 30px;
+}
+
+.leftBtn {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.countBtn {
+  background-color: initial;
+}
+
+.countBtn:hover {
+  background-color: rgba(159, 159, 159, 0.2);
+}
+
+.rightBtn {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+/* 없을 경우 */
+.cartX {
   height: 120px;
   display: grid;
   align-content: space-between;
@@ -36,21 +102,12 @@
   font-weight: inherit;
 }
 
-.button {
-  padding: 0 16px;
-  height: 48px;
-  font-size: 14px;
-  font-weight: 600;
-  border: 0;
-  border-radius: 10px;
-  color: #ffffff;
-  background-color: #641ae6;
-  cursor: pointer;
-  transition: all 0.2s linear;
+.link {
+  width: 100px;
 }
 
-.button:hover {
-  background-color: #4a08bd;
+.radiusBtn {
+  border-radius: 10px;
 }
 
 .priceArea {
@@ -65,4 +122,9 @@
   margin-right: 20px;
   font-size: 24px;
   color: #a6adba;
+}
+
+.purchaseArea {
+  display: flex;
+  justify-content: flex-end;
 }
