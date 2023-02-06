@@ -1,9 +1,20 @@
 import React from "react";
 import styled from "@emotion/styled";
+import { useRecoilState } from "recoil";
+
+import { cartState, modalState } from "../states/atoms";
 
 const Modal = () => {
-  const handleRemove = () => {};
-  const handleNo = () => {};
+  const [modal, setModal] = useRecoilState(modalState);
+  const [cart, setCart] = useRecoilState(cartState);
+
+  const handleRemove = () => {
+    setCart([]);
+    setModal(false);
+  };
+  const handleNo = () => {
+    setModal(false);
+  };
 
   return (
     <ModalArea>
@@ -32,7 +43,6 @@ const ModalArea = styled.section`
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.3);
-} 
 `;
 
 const ModalBox = styled.div`

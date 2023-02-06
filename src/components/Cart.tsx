@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useRecoilState } from "recoil";
+
 import { getProductByCart } from "../service/shopService";
+import { cartState, modalState } from "../states/atoms";
 import styles from "./Cart.module.css";
 import Modal from "./Modal";
 
 const Cart = () => {
-  const [cart, setCart] = useState(false);
+  const [cart, setCart] = useRecoilState(cartState);
   const [count, setCount] = useState(1);
-  const [modal, setModal] = useState(false);
+  const [modal, setModal] = useRecoilState(modalState);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -17,13 +20,11 @@ const Cart = () => {
     fetchProducts();
   }, []);
 
-  console.log(cart);
-
-  const handleClick = () => {
+  const handleMinusClick = () => {
     setCount(count - 1);
 
     if (count === 1) {
-      setCart(false);
+      setCart([]);
     }
   };
 
@@ -36,7 +37,7 @@ const Cart = () => {
         </ul>
       </div>
       <div className={styles.cart}>
-        {cart ? (
+        {cart.length > 0 ? (
           <>
             <div className={styles.cartO}>
               <figure className={styles.imgaeArea}>
@@ -49,7 +50,7 @@ const Cart = () => {
                 <p className={styles.price}>$67</p>
                 <div>
                   <button
-                    onClick={handleClick}
+                    onClick={handleMinusClick}
                     className={`${styles.button} ${styles.leftBtn}`}
                   >
                     -
