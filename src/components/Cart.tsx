@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getProductByCart } from "../service/shopService";
 import styles from "./Cart.module.css";
+import Modal from "./Modal";
 
 const Cart = () => {
   const [cart, setCart] = useState(false);
   const [count, setCount] = useState(1);
+  const [modal, setModal] = useState(false);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -82,9 +84,15 @@ const Cart = () => {
         )}
         <div className={styles.purchaseArea}>
           <span className={styles.price}>총 : $0</span>
-          <button className={`${styles.button} ${styles.radiusBtn}`}>
+          <button
+            onClick={() => {
+              setModal(true);
+            }}
+            className={`${styles.button} ${styles.radiusBtn}`}
+          >
             구매하기
           </button>
+          {modal ? <Modal /> : null}
         </div>
       </div>
     </section>

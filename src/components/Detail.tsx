@@ -44,7 +44,7 @@ const Detail = () => {
           <p className={styles.description}>{products.description}</p>
           <div className={styles.starRating}>
             <div>☆☆☆☆☆</div>
-            <div className={styles.count}>4.6 / 400 참여</div>
+            <div className={styles.count}>2.2 / 140 참여</div>
           </div>
           <p className={styles.price}>{`$${price}`}</p>
           <div>
